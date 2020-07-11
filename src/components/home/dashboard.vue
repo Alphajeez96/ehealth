@@ -1,17 +1,19 @@
 <template>
   <div>
     <cards></cards>
+      <chart></chart>
   </div>
 </template>
 
 <script>
 import cards from './cards'
+import chart from './barchart'
 const axios = require('axios')
 
 export default {
   name: 'dashboard',
   components: {
-    cards,
+    cards, chart
   },
   data() {
     return {
