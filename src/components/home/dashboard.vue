@@ -31,7 +31,14 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.users = response
-        console.log(response.data)
+        let me = response.data
+        console.log(me);  
+        var obj =me
+   
+    for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
+
         // this.url = response.data
         // console.log(response.data.data.results)
       } catch (error) {

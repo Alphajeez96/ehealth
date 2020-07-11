@@ -6,37 +6,12 @@
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
-        <span class="font-weight-light">e</span>
-        <span>Health</span>
+        <span class="font-weight-light">Alpha</span>
+        <span>Clinics</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-
-      <!-- <v-menu offset-y>
-        <template v-slot:activator="{ on }">
-          <v-btn color="primary" flat v-on="on" class="mx-3">
-            <v-icon left></v-icon>
-            <span>Menu</span>
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item
-            v-for="item in items"
-            :key="item.text"
-            router
-            :to="item.route"
-          >
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu> -->
-
-      <!-- <v-btn flat class="grey">
-        <span>Sign Out</span>
-        <v-icon right>mdi person-arrow-right</v-icon>
-      </v-btn> -->
     </v-app-bar>
     <v-navigation-drawer app color="black" v-model="drawer">
-    
       <v-app-bar-nav-icon
         class="white--text"
         @click="drawer = !drawer"
@@ -50,9 +25,7 @@
             <p class="white--text subheading mt-1 mx-2">Admin</p>
           </v-flex>
 
-          <v-flex class="mt-4 mb-3">
-        
-          </v-flex>
+          <v-flex class="mt-4 mb-3"></v-flex>
         </v-layout>
         <v-list dark>
           <v-list-item-group v-model="item" color="primary">
@@ -77,18 +50,15 @@
 </template>
 
 <script>
-
 export default {
-  components: {
-    
-  },
+  components: {},
   data() {
     return {
       drawer: false,
       item: 1,
       items: [
         { text: 'Dashboard', icon: 'mdi-home', route: '/' },
-        { text: 'Users', icon: 'mdi-folder', route: '/projects' },
+        { text: 'Users', icon: 'mdi-folder', route: '/users' },
         { text: 'Team', icon: 'mdi-account', route: '/team' },
       ],
     }

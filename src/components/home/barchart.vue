@@ -10,7 +10,7 @@ import Highcharts from "highcharts";
 
 const data = {
   chart: {
-    type: "bar"
+    type: "column"
   },
   title: {
     text: "Historic World Population by Region"
@@ -20,7 +20,7 @@ const data = {
       'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
   },
   xAxis: {
-    categories: ["Africa", "America", "Asia", "Europe", "Oceania"],
+    categories: ["A+", "O+", "B+", "AB+", "A-","O-","B-","AB-"],
     title: {
       text: null
     }
@@ -28,7 +28,7 @@ const data = {
   yAxis: {
     min: 0,
     title: {
-      text: "Population (millions)",
+      text: "Population",
       align: "high"
     },
     labels: {
@@ -36,7 +36,7 @@ const data = {
     }
   },
   tooltip: {
-    valueSuffix: " millions"
+    valueSuffix: " Persons"
   },
   plotOptions: {
     bar: {
@@ -62,6 +62,7 @@ const data = {
   },
   series: [
     {
+         allowPointSelect: true,
       name: "Year 1800",
       data: [107, 31, 635, 203, 2]
     },
