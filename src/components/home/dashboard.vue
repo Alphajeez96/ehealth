@@ -1,8 +1,7 @@
 <template>
-<div>
-<cards></cards>
-
-</div>
+  <div>
+    <cards></cards>
+  </div>
 </template>
 
 <script>
@@ -11,8 +10,8 @@ const axios = require('axios')
 
 export default {
   name: 'dashboard',
-  components:{
-      cards
+  components: {
+    cards,
   },
   data() {
     return {
@@ -27,10 +26,10 @@ export default {
     async getData() {
       try {
         let response = await this.$http.get(
-          `https://ehealth-alpha.firebaseio.com/users`,
+          `https://ehealth-alpha.firebaseio.com/users.json`,
         )
-        this.users = response.data
-        console.log( response.data)
+        this.users = response
+        console.log(response.data)
         // this.url = response.data
         // console.log(response.data.data.results)
       } catch (error) {
