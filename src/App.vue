@@ -1,26 +1,23 @@
 <template>
   <v-app>
- <eheader></eheader>
-
+    <eheader></eheader>
     <v-content>
-      <HelloWorld/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
-import eheader from '@/components/partials/nav2'
+import eheader from '@/components/partials/navbar'
 
 export default {
   name: 'App',
 
   components: {
-    eheader
+    eheader,
   },
 
   data: () => ({
     //
   }),
-};
+}
 </script>
