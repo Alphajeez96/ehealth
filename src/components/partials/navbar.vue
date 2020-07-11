@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-toolbar app>
+    <v-app-bar>
       <v-app-bar-nav-icon
         class="grey--text"
         @click="drawer = !drawer"
@@ -34,9 +34,9 @@
         <span>Sign Out</span>
         <v-icon right>mdi person-arrow-right</v-icon>
       </v-btn> -->
-    </v-toolbar>
+    </v-app-bar>
     <v-navigation-drawer app color="black" v-model="drawer">
-      <!-- <p>test</p> -->
+    
       <v-app-bar-nav-icon
         class="white--text"
         @click="drawer = !drawer"
@@ -51,7 +51,7 @@
           </v-flex>
 
           <v-flex class="mt-4 mb-3">
-            <popup></popup>
+        
           </v-flex>
         </v-layout>
         <v-list dark>
@@ -77,10 +77,10 @@
 </template>
 
 <script>
-import popup from './popup'
+
 export default {
   components: {
-    popup,
+    
   },
   data() {
     return {
