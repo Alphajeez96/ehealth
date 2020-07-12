@@ -1,5 +1,7 @@
 <template>
 <div>
+
+
   <v-row >
 
 
@@ -21,7 +23,9 @@
         tile
         size="80"
         color="grey"
-      ></v-list-item-avatar>
+        v-for="item in items" :key="item.id"
+       
+      > <v-img  :src="item.avatar"></v-img></v-list-item-avatar>
     </v-list-item>
 
  
@@ -42,6 +46,9 @@ export default {
   data() {
     return {
       users: [],
+      items:[
+          {avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' }
+      ]
     }
   },
 
