@@ -84,8 +84,16 @@ export default {
   },
   data() {
     return {
-      options: data
+      options: data,
+      details: {}
     };
+  },
+  computed:{
+    formatData(){
+let x = Object.values(this.details)
+let e = {o:0, a: 0, i:0, ab:0} //age 20 - 40
+let f = {o:0, a:0, i:0, ab:0} //age 41 and above
+    }
   }
 };
 </script>
