@@ -88,11 +88,101 @@ export default {
       details: {}
     };
   },
+
   computed:{
     formatData(){
 let x = Object.values(this.details)
-let e = {o:0, a: 0, i:0, ab:0} //age 20 - 40
-let f = {o:0, a:0, i:0, ab:0} //age 41 and above
+let e = {o:0,  i:0, a: 0, j:0, ab:0, k:0, b:0, l:0} //age 20 - 40
+let f = {o:0,  i:0, a: 0, j:0, ab:0, k:0, b:0, l:0} //age 41 -60
+let g=  {o:0,  i:0, a: 0, j:0, ab:0, k:0, b:0, l:0} // age 61-80
+
+let twentygroup;
+let fourtygroup;
+let sixtygroup;
+
+for(const i of x){
+    if(i.Age > 19 && i.Age < 41 ){
+        
+        if(i.Bloodgroup === 'O+'){
+            e.o++
+        }else if(i.Bloodgroup === 'O-'){
+            e.i++
+        }
+        else if(i.Bloodgroup === 'A+'){
+            e.a++
+        }
+           else if(i.Bloodgroup === 'A-'){
+            e.j++
+        }
+        else if (i.Bloodgroup === 'AB+'){
+            e.ab++
+        }
+           else if(i.Bloodgroup === 'AB-'){
+            e.k++
+        }
+         else if (i.Bloodgroup === 'B+'){
+            e.b++
+        }
+           else if(i.Bloodgroup === 'B-'){
+            e.l++
+        }
+      
+    } else if(i.Age > 40 && i.Age < 61 ){
+        if(i.Bloodgroup === 'O+'){
+            f.o++
+        }else if(i.Bloodgroup === 'O-'){
+            f.i++
+        }
+        else if(i.Bloodgroup === 'A+'){
+            f.a++
+        }
+           else if(i.Bloodgroup === 'A-'){
+            f.j++
+        }
+        else if (i.Bloodgroup === 'AB+'){
+            f.ab++
+        }
+           else if(i.Bloodgroup === 'AB-'){
+            f.k ++
+        }
+         else if (i.Bloodgroup === 'B+'){
+            f.b++
+        }
+           else if(i.Bloodgroup === 'B-'){
+            f.l++
+        }
+    }
+    else if(i.Age > 60 && i.Age < 81 ){
+        if(i.Bloodgroup === 'O+'){
+            g.o++
+        }else if(i.Bloodgroup === 'O-'){
+            g.i++
+        }
+        else if(i.Bloodgroup === 'A+'){
+            g.a++
+        }
+           else if(i.Bloodgroup === 'A-'){
+            g.j ++
+        }
+        else if (i.Bloodgroup === 'AB+'){
+            g.ab++
+        }
+           else if(i.Bloodgroup === 'AB-'){
+            getComputedStyle.k ++
+        }
+         else if (i.Bloodgroup === 'B+'){
+            g.b++
+        }
+           else if(i.Bloodgroup === 'B-'){
+            g.l++
+        }
+    }
+}
+twentygroup = Object.values(e)
+fourtygroup = Object.values(f)
+sixtygroup = Object.values(g)
+
+return {twentygroup, fourtygroup, sixtygroup }
     }
   }
 };
