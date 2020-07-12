@@ -9,6 +9,7 @@ import VueHighcharts from "vue2-highcharts";
 import Highcharts from "highcharts";
 
 const data = {
+
   chart: {
     type: "column"
   },
@@ -63,17 +64,18 @@ const data = {
   series: [
     {
          allowPointSelect: true,
-      name: "Year 1800",
-      data: [107, 31, 635, 203, 2]
+      name: "20-40 Years",
+      data: [107, 31, 635, 203, 2,1052, 954, 4250, ]
     },
     {
-      name: "Year 1900",
-      data: [133, 156, 947, 408, 6]
+      name: "41-60 Years",
+      data: [133, 156, 947, 408, 6,1052, 954, 4250, ]
     },
     {
-      name: "Year 2012",
-      data: [1052, 954, 4250, 740, 38]
-    }
+      name: "61-80 Years",
+      data: [1052, 954, 4250, 740, 38,1052, 954, 4250, ]
+    },
+    
   ]
 };
 export default {
