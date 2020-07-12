@@ -13,7 +13,7 @@
 
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
-        <v-avatar v-on="on" color="red">
+        <v-avatar v-on="on" color="red" class='mx-5 admin'>
       <span class="white--text headline">AD</span>
     </v-avatar>
         </template>
@@ -29,15 +29,12 @@
         </v-list>
       </v-menu> 
 
-       <v-btn flat class="grey">
-        <span>Sign Out</span>
-        <v-icon right>mdi person-arrow-right</v-icon>
-      </v-btn> 
+  
     </v-app-bar>
     <v-navigation-drawer app color="black" v-model="drawer">
     
       <v-app-bar-nav-icon
-        class="white--text"
+        class="white--text pt-4"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-col>
@@ -46,7 +43,7 @@
             <v-avatar size="100">
               <img src="../../assets/img/avatar-1.png" />
             </v-avatar>
-            <p class="white--text subheading mt-1 mx-2">Admin</p>
+            <p class="white--text subheading mt-1 mx-5">Admin</p>
           </v-flex>
 
           <v-flex class="mt-4 mb-3">
@@ -86,9 +83,9 @@ export default {
       drawer: false,
       item: 1,
       items: [
-        { text: 'Dashboard', icon: 'mdi-home', route: '/' },
-        { text: 'Users', icon: 'mdi-folder', route: '/users' },
-        { text: 'Team', icon: 'mdi-account', route: '/team' },
+        { text: 'Dashboard', icon: 'mdi-view-dashboard', route: '/' },
+        { text: 'Users', icon: 'mdi-account-heart', route: '/users' },
+        { text: 'Logout', icon: 'mdi-logout', route: '/logout' },
       ],
     }
   },
@@ -97,5 +94,8 @@ export default {
 <style scoped>
 body {
   font-size: 12px;
+}
+.admin{
+  cursor: pointer;
 }
 </style>
