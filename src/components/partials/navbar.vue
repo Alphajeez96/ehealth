@@ -40,10 +40,10 @@
       <v-col>
         <v-layout column align-center>
           <v-flex class="mt-5">
-            <v-avatar size="100">
+            <v-avatar size="80">
               <img src="../../assets/img/avatar-1.png" />
             </v-avatar>
-            <p class="white--text subheading mt-1 mx-5">Admin</p>
+            <p class="white--text subheading mt-2 mx-4">Admin</p>
           </v-flex>
 
           <v-flex class="mt-4 mb-3">
