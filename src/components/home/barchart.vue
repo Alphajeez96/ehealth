@@ -2,7 +2,7 @@
   <div>
     <section class="charts"></section>
   
-    <section class='' id="container"></section>
+    <section class='ma-5' id="container"></section>
    
   </div>
 </template>
@@ -127,8 +127,8 @@ export default {
         type: 'column',
         options3d: {
           enabled: true,
-          alpha: -4,
-          beta: -4,
+          alpha: 8,
+          beta: 358,
           depth: 50,
           viewDistance: 25,
         },
@@ -149,6 +149,22 @@ export default {
             depth: 40
         }
     },
+      legend: {
+    layout: "vertical",
+    align: "right",
+    verticalAlign: "top",
+    x: -40,
+    y: 80,
+    floating: true,
+    borderWidth: 1,
+    backgroundColor:
+      (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || "#FFFFFF",
+    shadow: true
+  },
+  credits: {
+     enabled: false
+},
+    
       series,
     })
   },
