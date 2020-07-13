@@ -8,6 +8,7 @@
 <script>
 import Highcharts from 'highcharts'
 
+
 export default {
   components: {},
   data() {
@@ -104,7 +105,7 @@ export default {
       try {
         this.details = JSON.parse(localStorage.getItem('details'))
       } catch (error) {
-        toast.error(error)
+      console.log(error.response)
       }
     }
 
@@ -183,7 +184,7 @@ export default {
         let offline = JSON.stringify(this.details)
         localStorage.setItem('details', offline)
       } catch (error) {
-        toast.error(error.response)
+      console.log(error.response)
       }
     },
   },

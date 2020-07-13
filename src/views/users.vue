@@ -51,7 +51,7 @@ export default {
       try {
         this.users = JSON.parse(localStorage.getItem('users'))
       } catch (error) {
-        toast.error(error)
+        // toast.error(error)
       }
     }
   },
@@ -66,7 +66,7 @@ export default {
         let local_users = JSON.stringify(this.users)
         localStorage.setItem('users', local_users)
       } catch (error) {
-        toast.error(error.response)
+        // toast.error(error.response)
       }
     },
   },

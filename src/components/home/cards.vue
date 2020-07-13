@@ -165,7 +165,7 @@ export default {
         let b1
         let b2
 
-        //loop through object to get bloodgroup property and subsequently sort 
+        //loop through object to get bloodgroup property and subsequently sort
         for (const i of x) {
           if (i.Bloodgroup === 'O+') {
             e.o++
@@ -200,6 +200,15 @@ export default {
   },
   async mounted() {
     await this.getData()
+
+    //instantiate local storage
+    if (localStorage.getItem('details')) {
+      try {
+        this.details = JSON.parse(localStorage.getItem('details'))
+      } catch (error) {
+        console.log(error.response)
+      }
+    }
   },
 
   methods: {
@@ -209,9 +218,11 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.details = response.data
-      
+        //set to local storage
+        let local_count = JSON.stringify(this.details)
+        localStorage.setItem('users', local_count)
       } catch (error) {
-        toast.error(error.response)
+        // toast.error(error.response)
       }
     },
   },
