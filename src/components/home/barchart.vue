@@ -1,8 +1,6 @@
 <template>
   <div>
-    <section class="charts">
-   
-    </section>
+    <section class="charts"></section>
     <section id="container"></section>
   </div>
 </template>
@@ -27,9 +25,9 @@ export default {
         let g = { o: 0, i: 0, a: 0, j: 0, ab: 0, k: 0, b: 0, l: 0 } // age 61-80
         console.log(e)
 
-        let twentygroup
-        let fortygroup
-        let sixtygroup
+        let twentygroup;
+        let fortygroup;
+        let sixtygroup;
 
         for (const i of x) {
           if (i.Age > 19 && i.Age < 41) {
@@ -97,7 +95,16 @@ export default {
     },
   },
   async mounted() {
+    
     await this.getData()
+
+    if (localStorage.getItem('details')) {
+      try {
+        this.details = JSON.parse(localStorage.getItem('details'))
+      } catch (error) {
+        // localStorage.removeItem('cats')
+      }
+    }
     let series = [
       {
         allowPointSelect: true,
@@ -116,13 +123,13 @@ export default {
     let myChart = Highcharts.chart('container', {
       chart: {
         type: 'column',
-         options3d: {
-                    enabled: true,
-                    alpha: 15,
-                    beta: 15,
-                    depth: 50,
-                    viewDistance: 25
-                }
+        options3d: {
+          enabled: true,
+          alpha: 15,
+          beta: 15,
+          depth: 50,
+          viewDistance: 25,
+        },
       },
       title: {
         text: 'Population',
@@ -146,6 +153,8 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.details = response.data
+        let parsed = JSON.stringify(this.details)
+        localStorage.setItem('details', parsed)
 
         console.log(response.data)
       } catch (error) {
