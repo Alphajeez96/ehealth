@@ -139,7 +139,7 @@ export default {
       },
       yAxis: {
         title: {
-          text: 'Fruit eaten',
+          text: 'Frequency',
         },
       },
       series,
@@ -153,8 +153,8 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.details = response.data
-        let parsed = JSON.stringify(this.details)
-        localStorage.setItem('details', parsed)
+        let offline = JSON.stringify(this.details)
+        localStorage.setItem('details', offline)
 
         console.log(response.data)
       } catch (error) {
@@ -164,3 +164,8 @@ export default {
   },
 }
 </script>
+<style  scoped>
+#container{
+  width:70%
+}
+</style>
