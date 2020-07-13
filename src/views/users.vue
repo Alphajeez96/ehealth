@@ -53,8 +53,6 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.users = response.data
-        let me = response.data
-        console.log(me)
       } catch (error) {
         console.log(error.response)
       }

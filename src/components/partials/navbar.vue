@@ -7,15 +7,15 @@
       ></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Alpha</span>
-        <span>linics</span>
+        <span>Clinics</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
-        <v-avatar v-on="on" color="red" class='mx-5 admin'>
-      <span class="white--text headline">AD</span>
-    </v-avatar>
+          <v-avatar v-on="on" color="red" class="mx-5 admin">
+            <span class="white--text headline">AD</span>
+          </v-avatar>
         </template>
         <v-list>
           <v-list-item
@@ -27,12 +27,9 @@
             <v-list-item-title>{{ item.text }}</v-list-item-title>
           </v-list-item>
         </v-list>
-      </v-menu> 
-
-  
+      </v-menu>
     </v-app-bar>
     <v-navigation-drawer app color="black" v-model="drawer">
-    
       <v-app-bar-nav-icon
         class="white--text pt-4"
         @click="drawer = !drawer"
@@ -46,9 +43,7 @@
             <p class="white--text subheading mt-2 mx-4">Admin</p>
           </v-flex>
 
-          <v-flex class="mt-4 mb-3">
-        
-          </v-flex>
+          <v-flex class="mt-4 mb-3"></v-flex>
         </v-layout>
         <v-list dark>
           <v-list-item-group v-model="item" color="primary">
@@ -73,11 +68,8 @@
 </template>
 
 <script>
-
 export default {
-  components: {
-    
-  },
+  components: {},
   data() {
     return {
       drawer: false,
@@ -85,7 +77,7 @@ export default {
       items: [
         { text: 'Dashboard', icon: 'mdi-view-dashboard', route: '/' },
         { text: 'Users', icon: 'mdi-account-heart', route: '/users' },
-        { text: 'Logout', icon: 'mdi-logout', route: '/logout' },
+        { text: 'Logout', icon: 'mdi-logout', route: '' },
       ],
     }
   },
@@ -95,7 +87,7 @@ export default {
 body {
   font-size: 12px;
 }
-.admin{
+.admin {
   cursor: pointer;
 }
 </style>

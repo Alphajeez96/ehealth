@@ -1,7 +1,7 @@
 <template>
   <div>
     <cards></cards>
-      <chart></chart>
+    <chart></chart>
   </div>
 </template>
 
@@ -13,7 +13,8 @@ const axios = require('axios')
 export default {
   name: 'dashboard',
   components: {
-    cards, chart
+    cards,
+    chart,
   },
   data() {
     return {
@@ -31,15 +32,7 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.users = response
-        let me = response.data
-        console.log(me); 
-
        
-
-
-
-        // this.url = response.data
-        // console.log(response.data.data.results)
       } catch (error) {
         console.log(error.response)
       }

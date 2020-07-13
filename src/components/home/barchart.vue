@@ -1,14 +1,12 @@
 <template>
   <div>
     <section class="charts"></section>
-  
-    <section class='ma-5' id="container"></section>
-   
+
+    <section class="ma-5" id="container"></section>
   </div>
 </template>
 <script>
 import Highcharts from 'highcharts'
-import Highcharts3d from "highcharts/highcharts-3d";
 
 export default {
   components: {},
@@ -27,9 +25,9 @@ export default {
         let g = { o: 0, i: 0, a: 0, j: 0, ab: 0, k: 0, b: 0, l: 0 } // age 61-80
         console.log(e)
 
-        let twentygroup;
-        let fortygroup;
-        let sixtygroup;
+        let twentygroup
+        let fortygroup
+        let sixtygroup
 
         for (const i of x) {
           if (i.Age > 19 && i.Age < 41) {
@@ -97,15 +95,12 @@ export default {
     },
   },
   async mounted() {
-    
     await this.getData()
 
     if (localStorage.getItem('details')) {
       try {
         this.details = JSON.parse(localStorage.getItem('details'))
-      } catch (error) {
-        // localStorage.removeItem('cats')
-      }
+      } catch (error) {}
     }
     let series = [
       {
@@ -144,27 +139,28 @@ export default {
           text: 'Frequency',
         },
       },
-        plotOptions: {
+      plotOptions: {
         column: {
-            depth: 40
-        }
-    },
+          depth: 40,
+        },
+      },
       legend: {
-    layout: "vertical",
-    align: "right",
-    verticalAlign: "top",
-    x: -40,
-    y: 80,
-    floating: true,
-    borderWidth: 1,
-    backgroundColor:
-      (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || "#FFFFFF",
-    shadow: true
-  },
-  credits: {
-     enabled: false
-},
-    
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+          (Highcharts.theme && Highcharts.theme.legendBackgroundColor) ||
+          '#FFFFFF',
+        shadow: true,
+      },
+      credits: {
+        enabled: false,
+      },
+
       series,
     })
   },
@@ -178,8 +174,6 @@ export default {
         this.details = response.data
         let offline = JSON.stringify(this.details)
         localStorage.setItem('details', offline)
-
-        console.log(response.data)
       } catch (error) {
         console.log(error.response)
       }
@@ -187,4 +181,3 @@ export default {
   },
 }
 </script>
-
