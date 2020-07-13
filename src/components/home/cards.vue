@@ -147,13 +147,13 @@ export default {
       if (Object.keys(this.details).length) {
         let x = Object.values(this.details)
         let e = { o: 0 } //blood group o+
-        let f = { i: 0 } //age 41 -60
-        let g = { a: 0 } //age 41 -60
-        let h = { j: 0 } //age 41 -60
-        let i = { b: 0 } //age 41 -60
-        let j = { k: 0 } //age 41 -60
-        let k = { ab: 0 } //age 41 -60
-        let l = { l: 0 } //age 41 -60
+        let f = { i: 0 } //blood group o-
+        let g = { a: 0 } //blood group A+
+        let h = { j: 0 } //blood group A-
+        let i = { b: 0 } //blood group B+
+        let j = { k: 0 } //blood group B-
+        let k = { ab: 0 } //blood group AB+
+        let l = { l: 0 } //blood group B-
         console.log(e)
 
         let o1

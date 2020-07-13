@@ -32,7 +32,6 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.users = response
-       
       } catch (error) {
         console.log(error.response)
       }
