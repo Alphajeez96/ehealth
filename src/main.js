@@ -5,7 +5,7 @@ import router from "./router";
 import vuetify from "./plugins/vuetify";
 import axios from "axios";
 import VueAxios from "vue-axios";
-import './registerServiceWorker'
+import "./registerServiceWorker";
 import Highcharts from "highcharts";
 import Highcharts3d from "highcharts/highcharts-3d";
 

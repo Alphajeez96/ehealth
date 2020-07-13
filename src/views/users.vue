@@ -39,12 +39,19 @@ export default {
   data() {
     return {
       users: [],
-      items: [{ avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' }],
+      items: [{ avatar: 'https://cdn.vuetifyjs.cAom/images/lists/2.jpg' }],
     }
   },
 
-  mounted() {
-    this.getData()
+  async mounted() {
+   await this.getData();
+
+    //instantiate local storage
+    if (localStorage.getItem('users')) {
+      try {
+        this.users = JSON.parse(localStorage.getItem('users'))
+      } catch (error) {}
+    }
   },
   methods: {
     async getData() {
@@ -53,6 +60,9 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.users = response.data
+        //set to local storage
+        let local_users = JSON.stringify(this.users)
+        localStorage.setItem('users', local_users)
       } catch (error) {
         console.log(error.response)
       }
