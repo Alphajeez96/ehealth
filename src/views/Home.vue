@@ -7,8 +7,9 @@
 <script>
 import dashboard from '@/components/home/dashboard'
 // TODO:Handle error with izitoast
-//TODO: Store users to local storage
 //TODO: display something in the dashboard carrds
+//TODO: configure PWA to carry correct logo
+//TODO: configure Header icon to carry correct logo
 
 export default {
   name: 'Home',
