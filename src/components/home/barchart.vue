@@ -1,12 +1,14 @@
 <template>
   <div>
     <section class="charts"></section>
-    <section id="container"></section>
+  
+    <section class='' id="container"></section>
+   
   </div>
 </template>
 <script>
 import Highcharts from 'highcharts'
-import chart from '../../assets/js/high-charts-3d'
+import Highcharts3d from "highcharts/highcharts-3d";
 
 export default {
   components: {},
@@ -125,8 +127,8 @@ export default {
         type: 'column',
         options3d: {
           enabled: true,
-          alpha: 15,
-          beta: 15,
+          alpha: -4,
+          beta: -4,
           depth: 50,
           viewDistance: 25,
         },
@@ -142,6 +144,11 @@ export default {
           text: 'Frequency',
         },
       },
+        plotOptions: {
+        column: {
+            depth: 40
+        }
+    },
       series,
     })
   },
@@ -164,8 +171,4 @@ export default {
   },
 }
 </script>
-<style  scoped>
-#container{
-  width:70%
-}
-</style>
+

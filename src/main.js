@@ -6,7 +6,10 @@ import vuetify from "./plugins/vuetify";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import './registerServiceWorker'
+import Highcharts from "highcharts";
+import Highcharts3d from "highcharts/highcharts-3d";
 
+Highcharts3d(Highcharts);
 Vue.use(VueAxios, axios);
 
 const base = axios.create({
