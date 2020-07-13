@@ -206,7 +206,7 @@ export default {
       try {
         this.details = JSON.parse(localStorage.getItem('details'))
       } catch (error) {
-        console.log(error.response)
+        console.log(error)
       }
     }
   },
@@ -222,7 +222,7 @@ export default {
         let local_count = JSON.stringify(this.details)
         localStorage.setItem('users', local_count)
       } catch (error) {
-        // toast.error(error.response)
+        console.log(error.response)
       }
     },
   },
