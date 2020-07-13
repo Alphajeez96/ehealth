@@ -17,7 +17,6 @@ export default {
   },
 
   computed: {
-
     //formated data here
     formatdata() {
       if (Object.keys(this.details).length) {
@@ -27,11 +26,11 @@ export default {
         let g = { o: 0, i: 0, a: 0, j: 0, ab: 0, k: 0, b: 0, l: 0 } // age 61-80
         console.log(e)
 
-        let twentygroup;
-        let fortygroup;
-        let sixtygroup;
+        let twentygroup
+        let fortygroup
+        let sixtygroup
 
-//loop through object to get age property and subsequently sort by range
+        //loop through object to get age property and subsequently sort by range
         for (const i of x) {
           if (i.Age > 19 && i.Age < 41) {
             if (i.Bloodgroup === 'O+') {
@@ -100,11 +99,13 @@ export default {
   async mounted() {
     await this.getData()
 
-//set to local storage
+    //instantiate local storage
     if (localStorage.getItem('details')) {
       try {
         this.details = JSON.parse(localStorage.getItem('details'))
-      } catch (error) {}
+      } catch (error) {
+        toast.error(error)
+      }
     }
 
     //Chart settings here
@@ -178,10 +179,11 @@ export default {
           `https://ehealth-alpha.firebaseio.com/users.json`,
         )
         this.details = response.data
+        //set to local storage
         let offline = JSON.stringify(this.details)
         localStorage.setItem('details', offline)
       } catch (error) {
-        console.log(error.response)
+        toast.error(error.response)
       }
     },
   },
